@@ -6,13 +6,107 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>code-parent</name>
-    <url>http://maven.apache.org</url>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+    <url>https://github.com/flysoloing/code-parent</url>
+
+    <developers>
+        <developer>
+            <id>flysoloing</id>
+            <name>Lai Tao</name>
+            <email>flysoloing(at)gmail.com</email>
+            <roles>
+                <role>Owner</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>FlySoloing</name>
+        <url>http://flysoloing.github.io/</url>
+    </organization>
+
+    <!-- private remote libs repository -->
+    <repositories>
+        <repository>
+            <id>flysoloing-maven-libs-repo</id>
+            <name>FlySoloing Maven Libs Repository</name>
+            <url>http://flysoloing.github.io/repo/libs</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- private remote plugins repository -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>flysoloing-maven-plugins-repo</id>
+            <name>FlySoloing Maven Plugins Repository</name>
+            <url>http://flysoloing.github.io/repo/plugins</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>3.8.1</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--<build>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<groupId>com.flysoloing.plugins.ghrepo</groupId>-->
+    <!--<artifactId>ghrepo-maven-plugin</artifactId>-->
+    <!--<version>1.0-SNAPSHOT</version>-->
+    <!--<configuration>-->
+    <!--<localGhRepoLibsPath>D:\DevEnv\repo\libs</localGhRepoLibsPath>-->
+    <!--<localGhRepoPluginsPath>D:\DevEnv\repo\plugins</localGhRepoPluginsPath>-->
+    <!--</configuration>-->
+    <!--<executions>-->
+    <!--<execution>-->
+    <!--<id>flush</id>-->
+    <!--<phase>install</phase>-->
+    <!--<goals>-->
+    <!--<goal>sync-ghrepo</goal>-->
+    <!--</goals>-->
+    <!--</execution>-->
+    <!--</executions>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
+    <!--</build>-->
+
+    <!--<scm>-->
+        <!--<connection>scm:https://github.com/shardingjdbc/sharding-jdbc</connection>-->
+        <!--<developerConnection>scm:https://github.com/shardingjdbc/sharding-jdbc</developerConnection>-->
+        <!--<url>https://github.com/shardingjdbc/sharding-jdbc</url>-->
+    <!--</scm>-->
+
+    <!--<distributionManagement>-->
+        <!--<snapshotRepository>-->
+            <!--<id>sonatype-nexus-snapshots</id>-->
+            <!--<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+        <!--</snapshotRepository>-->
+        <!--<repository>-->
+            <!--<id>sonatype-nexus-releases</id>-->
+            <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
+        <!--</repository>-->
+    <!--</distributionManagement>-->
 </project>
