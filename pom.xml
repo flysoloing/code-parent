@@ -1,169 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Basics Settings -->
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.flysoloing</groupId>
     <artifactId>code-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
-    <name>code-parent</name>
-    <url>https://github.com/flysoloing/code-parent</url>
-
-    <developers>
-        <developer>
-            <id>flysoloing</id>
-            <name>Lai Tao</name>
-            <email>flysoloing(at)gmail.com</email>
-            <roles>
-                <role>Owner</role>
-            </roles>
-            <timezone>+8</timezone>
-        </developer>
-    </developers>
-
-    <organization>
-        <name>FlySoloing</name>
-        <url>http://flysoloing.github.io/</url>
-    </organization>
-
-    <!-- private remote libs repository -->
-    <repositories>
-        <repository>
-            <id>flysoloing-maven-libs-repo</id>
-            <name>FlySoloing Maven Libs Repository</name>
-            <url>http://flysoloing.github.io/repo/libs</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <!-- private remote plugins repository -->
-    <pluginRepositories>
-        <pluginRepository>
-            <id>flysoloing-maven-plugins-repo</id>
-            <name>FlySoloing Maven Plugins Repository</name>
-            <url>http://flysoloing.github.io/repo/plugins</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
-
-    <prerequisites>
-        <maven>3.0</maven>
-    </prerequisites>
+    <version>1.1-SNAPSHOT</version>
 
     <properties>
         <!-- test -->
         <junit.version>4.12</junit.version>
         <!-- log -->
         <log4j.version>1.2.17</log4j.version>
-        <logback.version>1.1.7</logback.version>
-        <slf4j.version>1.7.21</slf4j.version>
+        <log4j2.version>2.12.1</log4j2.version>
+        <logback.version>1.2.3</logback.version>
+        <slf4j.version>1.7.28</slf4j.version>
         <!-- network -->
-        <netty.version>4.1.9.Final</netty.version>
-        <httpclient.version>4.5.3</httpclient.version>
-        <!-- spring -->
-        <spring.version>4.3.20.RELEASE</spring.version>
+        <netty.version>4.1.39.Final</netty.version>
+        <httpclient.version>4.5.9</httpclient.version>
+        <!-- Spring Framework 4.3.x: JDK 6-8 -->
+        <spring4.3.x.version>4.3.25.RELEASE</spring4.3.x.version>
+        <!-- Spring Framework 5.0.x: JDK 8-10 -->
+        <spring5.0.x.version>5.0.15.RELEASE</spring5.0.x.version>
+        <!-- Spring Framework 5.1.x: JDK 8-12 -->
+        <spring5.1.x.version>5.1.9.RELEASE</spring5.1.x.version>
         <!-- zk -->
-        <curator.version>3.2.1</curator.version>
+        <curator.version>4.2.0</curator.version>
         <!-- Redis -->
-        <jedis.version>2.9.0</jedis.version>
+        <jedis.version>3.1.0</jedis.version>
         <!-- resteasy -->
-        <resteasy.version>3.0.19.Final</resteasy.version>
+        <resteasy.version>3.8.1.Final</resteasy.version>
+        <jaxrs-api.version>3.0.12.Final</jaxrs-api.version>
+        <javax.ws.rs-api.version>2.1.1</javax.ws.rs-api.version>
         <!-- mybatis -->
-        <mybatis.version>3.4.1</mybatis.version>
-        <mybatis-spring.version>1.3.0</mybatis-spring.version>
+        <mybatis.version>3.5.2</mybatis.version>
+        <mybatis-spring.version>2.0.2</mybatis-spring.version>
         <!-- shiro -->
-        <shiro.version>1.4.0</shiro.version>
+        <shiro.version>1.4.1</shiro.version>
         <!-- template -->
         <velocity.version>1.7</velocity.version>
         <velocity-tools.version>2.0</velocity-tools.version>
-        <freemarker.version>2.3.23</freemarker.version>
+        <freemarker.version>2.3.29</freemarker.version>
+        <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
         <!-- servlet -->
-        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <jstl.version>1.2</jstl.version>
-        <standard.version>1.1.2</standard.version>
+        <taglibs.version>1.2.5</taglibs.version>
         <!-- json -->
-        <jackson.version>[2.9.8,)</jackson.version>
-        <aspectj.version>1.8.9</aspectj.version>
+        <jackson.version>[2.9.9,)</jackson.version>
+        <aspectj.version>1.9.4</aspectj.version>
         <!-- db -->
-        <mysql-connector-java.version>5.1.20</mysql-connector-java.version>
-        <h2.version>1.4.192</h2.version>
+        <!-- default mysql5.1.x -->
+        <mysql-connector-java5.1.x.version>5.1.48</mysql-connector-java5.1.x.version>
+        <mysql-connector-java6.0.x.version>6.0.6</mysql-connector-java6.0.x.version>
+        <mysql-connector-java8.0.x.version>8.0.17</mysql-connector-java8.0.x.version>
+        <h2.version>1.4.199</h2.version>
         <!-- xml -->
         <dom4j.version>1.6.1</dom4j.version>
-        <xstream.version>1.4.9</xstream.version>
+        <xstream.version>1.4.11.1</xstream.version>
         <!-- Alibaba -->
-        <druid.version>1.0.26</druid.version>
-        <fastjson.version>1.2.38</fastjson.version>
+        <druid.version>1.1.20</druid.version>
+        <fastjson.version>1.2.59</fastjson.version>
         <!-- Google -->
-        <gson.version>2.2.4</gson.version>
-        <guava.version>19.0</guava.version>
-        <protobuf-java.version>3.2.0</protobuf-java.version>
+        <gson.version>2.8.5</gson.version>
+        <guava.version>28.1-jre</guava.version>
+        <protobuf-java.version>3.9.1</protobuf-java.version>
         <lambdaj.version>2.3.3</lambdaj.version>
         <!-- GitHub -->
         <kaptcha.version>0.0.9</kaptcha.version>
         <!-- new apache commons -->
-        <new-commons-dbcp2.version>2.1.1</new-commons-dbcp2.version>
-        <new-commons-lang3.version>3.4</new-commons-lang3.version>
+        <new-commons-dbcp2.version>2.7.0</new-commons-dbcp2.version>
+        <new-commons-lang3.version>3.9</new-commons-lang3.version>
         <new-commons-digester3.version>3.2</new-commons-digester3.version>
-        <new-commons-pool2.version>2.4.2</new-commons-pool2.version>
-        <new-commons-collections4.version>4.1</new-commons-collections4.version>
-        <new-commons-compress.version>1.18</new-commons-compress.version>
+        <new-commons-pool2.version>2.7.0</new-commons-pool2.version>
+        <new-commons-configuration2.version>2.5</new-commons-configuration2.version>
+        <new-commons-collections4.version>4.4</new-commons-collections4.version>
+        <new-commons-compress.version>1.19</new-commons-compress.version>
         <!-- old apache commons -->
         <old-commons-dbcp.version>1.4</old-commons-dbcp.version>
         <old-commons-digester.version>2.1</old-commons-digester.version>
-        <old-commons-io.version>2.5</old-commons-io.version>
+        <old-commons-io.version>2.6</old-commons-io.version>
         <old-commons-logging.version>1.2</old-commons-logging.version>
-        <old-commons-codec.version>1.10</old-commons-codec.version>
-        <old-commons-beanutils.version>1.9.2</old-commons-beanutils.version>
+        <old-commons-codec.version>1.13</old-commons-codec.version>
+        <old-commons-beanutils.version>1.9.4</old-commons-beanutils.version>
         <old-commons-lang.version>2.6</old-commons-lang.version>
         <old-commons-pool.version>1.6</old-commons-pool.version>
-        <old-commons-fileupload.version>[1.3.3,)</old-commons-fileupload.version>
+        <old-commons-fileupload.version>1.4</old-commons-fileupload.version>
         <old-commons-configuration.version>1.10</old-commons-configuration.version>
         <old-commons-collections.version>3.2.2</old-commons-collections.version>
-        <old-commons-validator.version>1.5.1</old-commons-validator.version>
+        <old-commons-validator.version>1.6</old-commons-validator.version>
         <old-commons-net.version>3.6</old-commons-net.version>
         <!-- Facebook -->
-        <util.version>0.1.29</util.version>
+        <facebook.jcommon.version>0.1.32</facebook.jcommon.version>
         <!-- about maven -->
-        <maven-core.version>3.3.3</maven-core.version>
+        <maven-core.version>3.6.1</maven-core.version>
         <maven-project.version>3.0-alpha-2</maven-project.version>
-        <maven-plugin-api.version>3.3.3</maven-plugin-api.version>
-        <maven-plugin-annotations.version>3.4</maven-plugin-annotations.version>
+        <maven-plugin-api.version>3.6.1</maven-plugin-api.version>
+        <maven-plugin-annotations.version>3.6.0</maven-plugin-annotations.version>
         <maven-plugin-testing-harness.version>3.3.0</maven-plugin-testing-harness.version>
         <!-- enhance tools -->
-        <reflections.version>0.9.10</reflections.version>
-        <joda-time.version>2.9.7</joda-time.version>
+        <reflections.version>0.9.11</reflections.version>
+        <joda-time.version>2.10.3</joda-time.version>
         <jzlib.version>1.1.3</jzlib.version>
-        <quartz.version>2.2.1</quartz.version>
+        <quartz.version>2.3.1</quartz.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
-        <hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
-        <lombok.version>1.16.20</lombok.version>
+        <hibernate-validator.version>6.0.17.Final</hibernate-validator.version>
+        <lombok.version>1.18.8</lombok.version>
         <!-- core plugins -->
-        <maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
-        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
-        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
-        <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
-        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
-        <maven-site-plugin.version>3.6</maven-site-plugin.version>
+        <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-deploy-plugin.version>3.0.0-M1</maven-deploy-plugin.version>
+        <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
+        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+        <maven-site-plugin.version>3.8.2</maven-site-plugin.version>
         <!-- packaging types/tools -->
-        <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
-        <maven-source-plugin.version>2.4</maven-source-plugin.version>
-        <maven-plugin-plugin.version>3.4</maven-plugin-plugin.version>
+        <maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
+        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+        <maven-plugin-plugin.version>3.6.1</maven-plugin-plugin.version>
         <!-- app server -->
         <jetty-maven-plugin.version>9.4.7.v20170914</jetty-maven-plugin.version>
         <tomcat6-maven-plugin.version>2.2</tomcat6-maven-plugin.version>
         <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
         <!-- enhanced plugins -->
-        <versions-maven-plugin.version>2.5</versions-maven-plugin.version>
+        <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
         <ghrepo-maven-plugin.version>1.0-SNAPSHOT</ghrepo-maven-plugin.version>
         <!-- environment variable -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -185,6 +145,11 @@
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j2.version}</version>
             </dependency>
 
             <!-- logback -->
@@ -232,58 +197,58 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context-support</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-beans</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-web</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-aop</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-aspects</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring5.1.x.version}</version>
             </dependency>
 
             <!-- curator -->
@@ -325,11 +290,6 @@
             </dependency>
             <dependency>
                 <groupId>org.jboss.resteasy</groupId>
-                <artifactId>jaxrs-api</artifactId>
-                <version>${resteasy.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.resteasy</groupId>
                 <artifactId>resteasy-jaxb-provider</artifactId>
                 <version>${resteasy.version}</version>
             </dependency>
@@ -339,9 +299,14 @@
                 <version>${resteasy.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>jaxrs-api</artifactId>
+                <version>${jaxrs-api.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>javax.ws.rs</groupId>
                 <artifactId>javax.ws.rs-api</artifactId>
-                <version>2.0.1</version>
+                <version>${javax.ws.rs-api.version}</version>
                 <scope>compile</scope>
             </dependency>
 
@@ -385,6 +350,11 @@
                 <artifactId>freemarker</artifactId>
                 <version>${freemarker.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.thymeleaf</groupId>
+                <artifactId>thymeleaf</artifactId>
+                <version>${thymeleaf.version}</version>
+            </dependency>
 
             <!-- servlet -->
             <dependency>
@@ -400,9 +370,9 @@
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>taglibs</groupId>
-                <artifactId>standard</artifactId>
-                <version>${standard.version}</version>
+                <groupId>org.apache.taglibs</groupId>
+                <artifactId>taglibs-standard-impl</artifactId>
+                <version>${taglibs.version}</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -439,7 +409,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector-java.version}</version>
+                <version>${mysql-connector-java5.1.x.version}</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
@@ -525,6 +495,11 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
+                <artifactId>commons-configuration2</artifactId>
+                <version>${new-commons-configuration2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
                 <version>${new-commons-collections4.version}</version>
             </dependency>
@@ -605,7 +580,17 @@
             <dependency>
                 <groupId>com.facebook.jcommon</groupId>
                 <artifactId>util</artifactId>
-                <version>${util.version}</version>
+                <version>${facebook.jcommon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.facebook.jcommon</groupId>
+                <artifactId>collections</artifactId>
+                <version>${facebook.jcommon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.facebook.jcommon</groupId>
+                <artifactId>concurrency</artifactId>
+                <version>${facebook.jcommon.version}</version>
             </dependency>
 
             <!-- about maven -->
@@ -676,6 +661,7 @@
         </dependencies>
     </dependencyManagement>
 
+    <!-- Build Settings -->
     <build>
         <pluginManagement>
             <plugins>
@@ -871,6 +857,59 @@
         </plugins>
     </build>
 
+    <!-- More Project Information -->
+    <name>code-parent</name>
+    <url>https://github.com/flysoloing/code-parent</url>
+    <organization>
+        <name>FlySoloing</name>
+        <url>http://flysoloing.github.io/</url>
+    </organization>
+    <developers>
+        <developer>
+            <id>flysoloing</id>
+            <name>Lai Tao</name>
+            <email>flysoloing(at)gmail.com</email>
+            <roles>
+                <role>Owner</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <!-- Environment Settings -->
+    <prerequisites>
+        <maven>3.0</maven>
+    </prerequisites>
+
+    <!-- private remote libs repository -->
+    <repositories>
+        <repository>
+            <id>flysoloing-maven-libs-repo</id>
+            <name>FlySoloing Maven Libs Repository</name>
+            <url>http://flysoloing.github.io/repo/libs</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <!-- private remote plugins repository -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>flysoloing-maven-plugins-repo</id>
+            <name>FlySoloing Maven Plugins Repository</name>
+            <url>http://flysoloing.github.io/repo/plugins</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
     <!--<scm>-->
         <!--<connection>scm:https://github.com/xxx/yyy</connection>-->
         <!--<developerConnection>scm:https://github.com/xxx/yyy</developerConnection>-->
@@ -887,4 +926,19 @@
             <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
         <!--</repository>-->
     <!--</distributionManagement>-->
+
+    <!-- GitHub Package Registry -->
+    <!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>github</id>-->
+            <!--<name>GitHub FlySoloing Maven Packages</name>-->
+            <!--<url>https://maven.pkg.github.com/flysoloing</url>-->
+        <!--</repository>-->
+    <!--</distributionManagement>-->
+
+    <!--<scm>-->
+        <!--<connection>scm:git:https://github.com/flysoloing/REPOSITORY</connection>-->
+        <!--<developerConnection>scm:git:https://github.com/flysoloing/REPOSITORY</developerConnection>-->
+        <!--<url>scm:git:https://github.com/flysoloing/REPOSITORY</url>-->
+    <!--</scm>-->
 </project>
