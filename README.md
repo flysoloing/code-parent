@@ -4,7 +4,7 @@
 
 通用parent模块，统一管理各Project的依赖项和配置项，定期升级优化，减少各应用的依赖包维护成本。
 
-当前最新正式版本：[1.1](https://github.com/flysoloing/repo/blob/gh-pages/libs/com/flysoloing/code-parent/1.0/code-parent-1.1.pom)
+当前最新正式版本：[1.1](https://github.com/flysoloing/repo/blob/gh-pages/libs/com/flysoloing/code-parent/1.1/code-parent-1.1.pom)
 
 当前最新快照版本：1.1-SNAPSHOT
 
