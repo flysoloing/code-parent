@@ -6,7 +6,7 @@
 
 当前最新正式版本：[1.1](https://github.com/flysoloing/repo/blob/gh-pages/libs/com/flysoloing/code-parent/1.1/code-parent-1.1.pom)
 
-当前最新快照版本：1.1-SNAPSHOT
+当前最新快照版本：1.2-SNAPSHOT
 
 **Release Notes:**
 
