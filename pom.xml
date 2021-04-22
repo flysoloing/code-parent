@@ -34,7 +34,7 @@
         <jaxrs-api.version>3.0.12.Final</jaxrs-api.version>
         <javax.ws.rs-api.version>2.1.1</javax.ws.rs-api.version>
         <!-- mybatis -->
-        <mybatis.version>3.5.2</mybatis.version>
+        <mybatis.version>3.5.6</mybatis.version>
         <mybatis-spring.version>2.0.2</mybatis-spring.version>
         <!-- shiro -->
         <shiro.version>1.4.1</shiro.version>
