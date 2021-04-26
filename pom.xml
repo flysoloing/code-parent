@@ -80,7 +80,7 @@
         <!-- old apache commons -->
         <old-commons-dbcp.version>1.4</old-commons-dbcp.version>
         <old-commons-digester.version>2.1</old-commons-digester.version>
-        <old-commons-io.version>2.6</old-commons-io.version>
+        <old-commons-io.version>2.7</old-commons-io.version>
         <old-commons-logging.version>1.2</old-commons-logging.version>
         <old-commons-codec.version>1.13</old-commons-codec.version>
         <old-commons-beanutils.version>1.9.4</old-commons-beanutils.version>
