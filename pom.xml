@@ -18,7 +18,7 @@
         <slf4j.version>1.7.28</slf4j.version>
         <!-- network -->
         <netty.version>4.1.42.Final</netty.version>
-        <httpclient.version>4.5.9</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <!-- Spring Framework 4.3.x: JDK 6-8 -->
         <spring4.3.x.version>4.3.25.RELEASE</spring4.3.x.version>
         <!-- Spring Framework 5.0.x: JDK 8-10 -->
