@@ -76,7 +76,7 @@
         <new-commons-pool2.version>2.7.0</new-commons-pool2.version>
         <new-commons-configuration2.version>2.5</new-commons-configuration2.version>
         <new-commons-collections4.version>4.4</new-commons-collections4.version>
-        <new-commons-compress.version>1.19</new-commons-compress.version>
+        <new-commons-compress.version>1.21</new-commons-compress.version>
         <!-- old apache commons -->
         <old-commons-dbcp.version>1.4</old-commons-dbcp.version>
         <old-commons-digester.version>2.1</old-commons-digester.version>
