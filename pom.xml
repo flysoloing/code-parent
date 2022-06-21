@@ -52,7 +52,7 @@
         <aspectj.version>1.9.4</aspectj.version>
         <!-- db -->
         <!-- default mysql5.1.x -->
-        <mysql-connector-java5.1.x.version>5.1.48</mysql-connector-java5.1.x.version>
+        <mysql-connector-java5.1.x.version>8.0.28</mysql-connector-java5.1.x.version>
         <mysql-connector-java6.0.x.version>6.0.6</mysql-connector-java6.0.x.version>
         <mysql-connector-java8.0.x.version>8.0.17</mysql-connector-java8.0.x.version>
         <h2.version>1.4.199</h2.version>
