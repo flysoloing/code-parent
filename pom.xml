@@ -90,7 +90,7 @@
         <old-commons-configuration.version>1.10</old-commons-configuration.version>
         <old-commons-collections.version>3.2.2</old-commons-collections.version>
         <old-commons-validator.version>1.6</old-commons-validator.version>
-        <old-commons-net.version>3.6</old-commons-net.version>
+        <old-commons-net.version>3.9.0</old-commons-net.version>
         <!-- Facebook -->
         <facebook.jcommon.version>0.1.32</facebook.jcommon.version>
         <!-- about maven -->
