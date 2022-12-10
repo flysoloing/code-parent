@@ -24,7 +24,7 @@
         <!-- Spring Framework 5.0.x: JDK 8-10 -->
         <spring5.0.x.version>5.0.15.RELEASE</spring5.0.x.version>
         <!-- Spring Framework 5.1.x: JDK 8-12 -->
-        <spring5.1.x.version>5.1.9.RELEASE</spring5.1.x.version>
+        <spring5.1.x.version>6.0.0</spring5.1.x.version>
         <!-- zk -->
         <curator.version>4.2.0</curator.version>
         <!-- Redis -->
